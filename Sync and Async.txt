@@ -1,0 +1,13 @@
+Synchronous - It means the code executes line by line. If one statement is taking more time it has to wait till the execution of that statement. The next statements have to wait until it’s finished. This can block the entire program flow.
+
+examples : Loops - is a synchrous operation 
+ex: console.log("Start")
+    for (let i=0; i<=10; i++){
+        console.log("Loop Mode")    # It stops the next statements to execute before the execution of the loop
+    }
+    console.log("End") 
+
+
+Asynchronous - JavaScript supports asynchronous programming, which allows certain operations (like fetching data from an API, reading files, or waiting for a timer) to happen without blocking the rest of the code.
+
+To make this easier, JavaScript provides settimeout, Callbacks, Promises, and the async/await keywords to handle asynchronous tasks more readably.
