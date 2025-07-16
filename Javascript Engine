@@ -1,0 +1,22 @@
+How Javascript engine works?
+    JavaScript engine is a program that reads, compile and executes the Javascript code.
+    V8(Chrome, NodeJs)
+    Spider Monkey(Firefox)
+    JavaScriptCore(safari)
+
+The engine’s main job is to:
+    Parse your code → turn it into machine code → execute it.
+    Manage memory, variables, and scope.
+    Provide the Call Stack to track what’s running.
+
+There are Callstack, MessageQueue, WebApis, EventLoop.
+
+Callstack: whenever we run a javascript file, the execution starts from the begining and if there is a function call that is pushed       to the Callstack, whenever the function returns it gets popped out. (Callstack only tracks synchoronous tasks.)
+
+Message Queue:
+The Message Queue does not track or run asynchronous operations itself.
+The Web APIs (or Node APIs) handle the actual async work — e.g., the timer for setTimeout, the network request for fetch.
+Once the async work is done, the callback is moved to the Message Queue.
+The Message Queue is just a waiting area for these callbacks.
+The Event Loop checks the Call Stack → if empty → pulls the first callback from the Message Queue → puts it on the Call Stack to run.
+
